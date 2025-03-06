@@ -72,7 +72,7 @@
             margin: 10px auto;
             max-width: 300px;
         }
-        .day-btn {
+        .day-btn, .grocery-btn {
             padding: 8px 15px;
             background: #ffd1dc;
             border: 1px solid #ff99cc;
@@ -82,7 +82,7 @@
             font-size: 0.9em;
             transition: all 0.3s;
         }
-        .day-btn:hover {
+        .day-btn:hover, .grocery-btn:hover {
             background: #ff99cc;
             color: #fff;
         }
@@ -94,14 +94,14 @@
             color: #ff6f61;
             cursor: pointer;
             font-size: 0.8em;
-            margin: 10px 0;
+            margin: 5px 0;
             transition: all 0.3s;
         }
         .all-btn:hover {
             background: #ff6f61;
             color: #fff;
         }
-        .workout-popup {
+        .workout-popup, .grocery-popup {
             display: none;
             position: fixed;
             top: 50%;
@@ -142,7 +142,7 @@
             color: #ff6f61;
             font-size: 0.9em;
             cursor: pointer;
-            margin: 10px 0;
+            margin: 5px 0;
             transition: all 0.3s;
         }
         .motivate-btn:hover {
@@ -185,17 +185,32 @@
             color: #ff99cc;
             font-size: 0.85em;
         }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ff99cc;
+            padding: 8px;
+            text-align: left;
+            font-size: 0.9em;
+        }
+        .comparison-table th {
+            background: #ffd1dc;
+            color: #ff6f61;
+        }
         @media (max-width: 600px) {
             .welcome-page h1 { font-size: 2em; }
             .welcome-page p { font-size: 1.2em; }
-            .day-btn { font-size: 0.85em; }
-            .workout-popup { padding: 12px; }
+            .day-btn, .grocery-btn { font-size: 0.85em; }
+            .workout-popup, .grocery-popup { padding: 12px; }
         }
     </style>
 </head>
 <body>
     <div class="welcome-page" id="welcome">
-        <h1>¡Hey, Karen (Sasha)!</h1>
+        <h1>¡Hey, Karen!</h1>
         <p>You’re a Dumbbell Boss!</p>
         <p></p>
         <p></p>
@@ -216,6 +231,9 @@
         </div>
         <button class="motivate-btn" onclick="showMotivation()">¡Fire Me Up!</button>
         <button class="all-btn" onclick="showAllWorkouts(0)">All Workouts</button>
+        <button class="grocery-btn" onclick="showGroceryList('aldi')">Aldi Grocery List</button>
+        <button class="grocery-btn" onclick="showGroceryList('pricechopper')">Price Chopper Grocery List</button>
+        <button class="all-btn" onclick="showPriceComparison()">Price Comparison</button>
     </div>
 
     <!-- Karen’s Main Workouts -->
@@ -557,6 +575,95 @@
         <p id="quote"></p>
     </div>
 
+    <!-- Aldi Grocery List Popup -->
+    <div class="grocery-popup" id="aldi-grocery">
+        <span class="close-btn" onclick="closePopup('aldi-grocery')">X</span>
+        <h2>Aldi Grocery List</h2>
+        <ul>
+            <li>Chicken Breast - Kirkwood Fresh Boneless Skinless (2.5-3 lbs, ~$12.87 at $4.29/lb)</li>
+            <li>Chicken Thighs - Kirkwood Fresh Boneless Skinless (6oz, ~$1.50 at $3.99/lb)</li>
+            <li>Steak - Black Angus Sirloin (1.5 lbs, ~$13.49 at $8.99/lb)</li>
+            <li>Salmon - Fremont Fish Market Frozen (1 lb, ~$7.99 at $7.99/lb)</li>
+            <li>Canned Tuna - Northern Catch Chunk Light (3 cans, 5oz each, ~$2.07 at $0.69/can)</li>
+            <li>Ground Turkey - Fresh Family Pack 93/7 (2.5 lbs, ~$8.73 at $3.49/lb)</li>
+        </ul>
+        <p>Total Estimate: ~$46.65</p>
+    </div>
+
+    <!-- Price Chopper Grocery List Popup -->
+    <div class="grocery-popup" id="pricechopper-grocery">
+        <span class="close-btn" onclick="closePopup('pricechopper-grocery')">X</span>
+        <h2>Price Chopper Grocery List</h2>
+        <ul>
+            <li>Chicken Breast - Fresh Boneless Skinless (2.5-3 lbs, ~$14.97 at $4.99/lb)</li>
+            <li>Chicken Thighs - Fresh Boneless Skinless (6oz, ~$1.87 at $4.99/lb)</li>
+            <li>Steak - Sirloin (1.5 lbs, ~$16.49 at $10.99/lb)</li>
+            <li>Salmon - Fresh Atlantic (1 lb, ~$11.99 at $11.99/lb)</li>
+            <li>Canned Tuna - Chunk Light in Water (3 cans, 5oz each, ~$2.97 at $0.99/can)</li>
+            <li>Ground Turkey - 93/7 (2.5 lbs, ~$11.23 at $4.49/lb)</li>
+        </ul>
+        <p>Total Estimate: ~$59.52</p>
+    </div>
+
+    <!-- Price Comparison Popup -->
+    <div class="grocery-popup" id="price-comparison">
+        <span class="close-btn" onclick="closePopup('price-comparison')">X</span>
+        <h2>Price Comparison: Aldi vs Price Chopper</h2>
+        <table class="comparison-table">
+            <tr>
+                <th>Item</th>
+                <th>Aldi Price</th>
+                <th>Price Chopper Price</th>
+            </tr>
+            <tr>
+                <td>Chicken Breast (per lb)</td>
+                <td>$4.29</td>
+                <td>$4.99</td>
+            </tr>
+            <tr>
+                <td>Chicken Thighs (per lb)</td>
+                <td>$3.99</td>
+                <td>$4.99</td>
+            </tr>
+            <tr>
+                <td>Steak - Sirloin (per lb)</td>
+                <td>$8.99</td>
+                <td>$10.99</td>
+            </tr>
+            <tr>
+                <td>Salmon (per lb)</td>
+                <td>$7.99 (Frozen)</td>
+                <td>$11.99 (Fresh)</td>
+            </tr>
+            <tr>
+                <td>Canned Tuna (per 5oz can)</td>
+                <td>$0.69</td>
+                <td>$0.99</td>
+            </tr>
+            <tr>
+                <td>Ground Turkey 93/7 (per lb)</td>
+                <td>$3.49</td>
+                <td>$4.49</td>
+            </tr>
+            <tr>
+                <td>Ground Beef 80/20 (per lb)</td>
+                <td>$4.49</td>
+                <td>$5.29</td>
+            </tr>
+            <tr>
+                <td>Pork Chops (per lb)</td>
+                <td>$3.79</td>
+                <td>$4.59</td>
+            </tr>
+            <tr>
+                <td>Tilapia (per lb)</td>
+                <td>$6.49 (Frozen)</td>
+                <td>$8.99 (Fresh)</td>
+            </tr>
+        </table>
+        <p>Note: Prices are estimates as of March 2025; actual costs may vary by location.</p>
+    </div>
+
     <script>
         function enterSite() {
             document.getElementById('welcome').style.display = 'none';
@@ -568,18 +675,28 @@
             document.getElementById(day).style.display = 'block';
         }
 
+        function showGroceryList(store) {
+            closeAllPopups();
+            document.getElementById(store + '-grocery').style.display = 'block';
+        }
+
+        function showPriceComparison() {
+            closeAllPopups();
+            document.getElementById('price-comparison').style.display = 'block';
+        }
+
         function closePopup(id) {
             document.getElementById(id).style.display = 'none';
         }
 
         function closeAllPopups() {
-            document.querySelectorAll('.workout-popup').forEach(popup => {
+            document.querySelectorAll('.workout-popup, .grocery-popup').forEach(popup => {
                 popup.style.display = 'none';
             });
         }
 
         const workoutProgression = {
-            'Monday': ['Monday', 'Monday', 'Alt1', 'Alt8'], // Monday appears twice
+            'Monday': ['Monday', 'Monday', 'Alt1', 'Alt8'],
             'Tuesday': ['Tuesday', 'Tuesday', 'Alt2', 'Alt9'],
             'Wednesday': ['Wednesday', 'Wednesday', 'Alt3', 'Alt5'],
             'Thursday': ['Thursday', 'Thursday', 'Alt4', 'Alt4'],
