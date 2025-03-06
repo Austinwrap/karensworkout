@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karen's Lil' Laundry Lift</title>
+    <title>Karen's Laundry Lift Empire</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -19,16 +19,16 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #ffb6c1, #ffccd5, #ffe4e1);
+            background: linear-gradient(135deg, #ff6f61, #ff99cc, #ffb6c1);
             text-align: center;
             padding: 15px;
             color: #fff;
-            text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.3);
-            animation: sparkle 1.5s infinite alternate;
+            text-shadow: 1px 1px 2px rgba(255, 105, 97, 0.3);
+            animation: pulse 1.5s infinite alternate;
         }
-        @keyframes sparkle {
-            0% { box-shadow: 0 0 8px rgba(255, 182, 193, 0.6); }
-            100% { box-shadow: 0 0 15px rgba(255, 228, 225, 0.6); }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 8px rgba(255, 111, 97, 0.6); }
+            100% { box-shadow: 0 0 15px rgba(255, 153, 204, 0.6); }
         }
         .welcome-page h1 {
             font-size: 2.5em;
@@ -45,15 +45,15 @@
             padding: 10px 25px;
             font-size: 1.1em;
             background: #fff;
-            border: 2px solid #ff69b4;
+            border: 2px solid #ff6f61;
             border-radius: 25px;
-            color: #ff69b4;
+            color: #ff6f61;
             cursor: pointer;
             transition: all 0.3s;
             margin-top: 15px;
         }
         .enter-btn:hover {
-            background: #ff69b4;
+            background: #ff6f61;
             color: #fff;
             transform: scale(1.05);
         }
@@ -77,7 +77,7 @@
             background: #ffd1dc;
             border: 1px solid #ff99cc;
             border-radius: 15px;
-            color: #ff69b4;
+            color: #ff6f61;
             cursor: pointer;
             font-size: 0.9em;
             transition: all 0.3s;
@@ -89,16 +89,16 @@
         .all-btn {
             padding: 6px 12px;
             background: #ffccd5;
-            border: 1px solid #ff69b4;
+            border: 1px solid #ff6f61;
             border-radius: 20px;
-            color: #ff69b4;
+            color: #ff6f61;
             cursor: pointer;
             font-size: 0.8em;
             margin: 10px 0;
             transition: all 0.3s;
         }
         .all-btn:hover {
-            background: #ff69b4;
+            background: #ff6f61;
             color: #fff;
         }
         .workout-popup {
@@ -110,7 +110,7 @@
             background: linear-gradient(135deg, #fff0f5, #f0f8ff);
             padding: 15px;
             border-radius: 20px;
-            box-shadow: 0 0 12px rgba(255, 105, 180, 0.3);
+            box-shadow: 0 0 12px rgba(255, 111, 97, 0.3);
             max-width: 85%;
             max-height: 75vh;
             overflow-y: auto;
@@ -120,7 +120,7 @@
         .close-btn, .nav-btn, .skip-btn {
             font-size: 1.3em;
             cursor: pointer;
-            color: #ff69b4;
+            color: #ff6f61;
             padding: 5px;
             border: none;
             background: none;
@@ -139,7 +139,7 @@
             background: #ffd1dc;
             border: 1px solid #ff99cc;
             border-radius: 15px;
-            color: #ff69b4;
+            color: #ff6f61;
             font-size: 0.9em;
             cursor: pointer;
             margin: 10px 0;
@@ -150,7 +150,7 @@
             color: #fff;
         }
         h2 {
-            color: #ff69b4;
+            color: #ff6f61;
             font-size: 1.5em;
             margin-bottom: 8px;
             font-weight: bold;
@@ -161,7 +161,7 @@
             margin: 8px 0;
         }
         ul {
-            list-style-type: heart;
+            list-style-type: square;
             padding-left: 20px;
             text-align: left;
             font-size: 0.9em;
@@ -195,16 +195,16 @@
 </head>
 <body>
     <div class="welcome-page" id="welcome">
-        <h1>¡Hiii, Karen!</h1>
+        <h1>¡Hey, Karen (Sasha)!</h1>
+        <p>You’re a Dumbbell Boss!</p>
         <p></p>
         <p></p>
-        <p></p>
-        <button class="enter-btn" onclick="enterSite()">¡Let’s Go!</button>
+        <button class="enter-btn" onclick="enterSite()">¡Let’s Crush It!</button>
     </div>
 
     <div class="main-content" id="main">
-        <h2>Karen’s Cute Dumbbell Days</h2>
-        <p class="reminder">Psst: Bump up weights every 2-3 weeks, cutie!</p>
+        <h2>Karen’s Power Lift Days</h2>
+        <p class="reminder">Tip: Up those weights every 2-3 weeks, queen!</p>
         <div class="day-buttons">
             <button class="day-btn" onclick="showWorkout('Monday')">Monday</button>
             <button class="day-btn" onclick="showWorkout('Tuesday')">Tuesday</button>
@@ -214,14 +214,14 @@
             <button class="day-btn" onclick="showWorkout('Saturday')">Saturday</button>
             <button class="day-btn" onclick="showWorkout('Sunday')">Sunday</button>
         </div>
-        <button class="motivate-btn" onclick="showMotivation()">¡Gimme a Boost!</button>
+        <button class="motivate-btn" onclick="showMotivation()">¡Fire Me Up!</button>
         <button class="all-btn" onclick="showAllWorkouts(0)">All Workouts</button>
     </div>
 
-    <!-- Week 1-4 Workouts -->
+    <!-- Karen’s Main Workouts -->
     <div class="workout-popup" id="Monday">
         <span class="close-btn" onclick="closePopup('Monday')">X</span>
-        <h2>Monday: Chest & Triceps (Week 1)</h2>
+        <h2>Monday: Chest & Triceps</h2>
         <h3>Warmup (5-10 min)</h3>
         <ul>
             <li>Jumping Jacks: 3x30 sec</li>
@@ -233,6 +233,8 @@
             <li>Overhead DB Tricep Ext: 22.5 lbs, 3x10</li>
             <li>DB Skull Crushers: 12.5 lbs, 3x10</li>
             <li>DB Chest Flys: 12.5 lbs, 3x12</li>
+            <li>DB Chest Press: 22.5 lbs, 3x10</li>
+            <li>DB Tricep Kickbacks: 12.5 lbs, 3x10</li>
         </ul>
         <div class="nav-container">
             <button class="nav-btn" onclick="showWorkout('Sunday')">◄ Back</button>
@@ -242,17 +244,19 @@
     </div>
     <div class="workout-popup" id="Tuesday">
         <span class="close-btn" onclick="closePopup('Tuesday')">X</span>
-        <h2>Tuesday: Back & Biceps (Week 1)</h2>
+        <h2>Tuesday: Back & Biceps</h2>
         <h3>Warmup (5-10 min)</h3>
         <ul>
             <li>Arm Swings: 2x20</li>
         </ul>
         <h3>Workout (45 min)</h3>
         <ul>
-            <li>DB Bent Over Rows: 22.5 lbs, 3x12</li>
+            <li>DB Bent Over Rows: 22.5 lbs, 3x10</li>
             <li>DB Single Arm Row: 22.5 lbs, 3x12</li>
             <li>DB Hammer Curls: 12.5 lbs, 3x10</li>
-            <li>DB Alternating Curls: 12.5 lbs, 3x8</li>
+            <li>DB Underhand Rows: 12.5 lbs, 3x10</li>
+            <li>DB Alternating Curls: 12.5 lbs, 3x6</li>
+            <li>DB Reverse Flys: 10 lbs, 3x12</li>
         </ul>
         <div class="nav-container">
             <button class="nav-btn" onclick="showWorkout('Monday')">◄ Back</button>
@@ -262,7 +266,7 @@
     </div>
     <div class="workout-popup" id="Wednesday">
         <span class="close-btn" onclick="closePopup('Wednesday')">X</span>
-        <h2>Wednesday: Legs Day 1 (Week 1)</h2>
+        <h2>Wednesday: Legs Day 1</h2>
         <h3>Warmup (5-10 min)</h3>
         <ul>
             <li>High Knees: 3x30 sec</li>
@@ -271,8 +275,8 @@
         <ul>
             <li>DB Elevated Squats: 20 lbs, 3x10</li>
             <li>DB RDLs: 15 lbs each, 3x10</li>
+            <li>DB Bulgarian RDLs: 25 lbs each, 3x10</li>
             <li>DB Sumo Squats: 25 lbs, 3x12</li>
-            <li>DB Good Mornings: 30 lbs, 3x10</li>
         </ul>
         <div class="nav-container">
             <button class="nav-btn" onclick="showWorkout('Tuesday')">◄ Back</button>
@@ -282,7 +286,7 @@
     </div>
     <div class="workout-popup" id="Thursday">
         <span class="close-btn" onclick="closePopup('Thursday')">X</span>
-        <h2>Thursday: Shoulders (Week 1)</h2>
+        <h2>Thursday: Shoulders</h2>
         <h3>Warmup (5-10 min)</h3>
         <ul>
             <li>Shoulder Rolls: 2x15</li>
@@ -291,7 +295,8 @@
         <ul>
             <li>DB Front Raises: 8 lbs, 3x12</li>
             <li>DB Arnold Press: 12 lbs, 3x10</li>
-            <li>DB Lateral Raises: 8 lbs, 3x10</li>
+            <li>DB Lateral Raises: 8 lbs, 3x8</li>
+            <li>DB Shoulder Press: 15 lbs, 3x10</li>
             <li>DB Upright Rows: 12 lbs, 3x12</li>
         </ul>
         <div class="nav-container">
@@ -302,17 +307,17 @@
     </div>
     <div class="workout-popup" id="Friday">
         <span class="close-btn" onclick="closePopup('Friday')">X</span>
-        <h2>Friday: Legs Day 2 (Week 1)</h2>
+        <h2>Friday: Legs Day 2</h2>
         <h3>Warmup (5-10 min)</h3>
         <ul>
             <li>Walking Lunges: 2x10</li>
         </ul>
         <h3>Workout (45 min)</h3>
         <ul>
-            <li>DB Glute Bridge: 25 lbs, 3x12</li>
+            <li>DB Glute Bridge: 25 lbs, 3x10</li>
             <li>DB RDLs: 25 lbs, 3x12</li>
+            <li>DB Good Mornings: 30 lbs, 3x10</li>
             <li>DB Step-Ups: 15 lbs each, 3x10</li>
-            <li>DB Goblet Squats: 20 lbs, 3x12</li>
         </ul>
         <div class="nav-container">
             <button class="nav-btn" onclick="showWorkout('Thursday')">◄ Back</button>
@@ -322,17 +327,17 @@
     </div>
     <div class="workout-popup" id="Saturday">
         <span class="close-btn" onclick="closePopup('Saturday')">X</span>
-        <h2>Saturday: Full Body (Week 1)</h2>
+        <h2>Saturday: Full Body Mix</h2>
         <h3>Warmup (5-10 min)</h3>
         <ul>
             <li>Jump Rope (or mimic): 3x1 min</li>
         </ul>
         <h3>Workout (45 min)</h3>
         <ul>
-            <li>DB Chest Press: 22.5 lbs, 3x12</li>
-            <li>DB Bent Over Rows: 22.5 lbs, 3x12</li>
+            <li>DB Chest Press: 22.5 lbs, 3x10</li>
+            <li>DB Bent Over Rows: 22.5 lbs, 3x10</li>
             <li>DB Squats: 20 lbs, 3x10</li>
-            <li>DB Shoulder Press: 12 lbs, 3x10</li>
+            <li>DB Shoulder Press: 15 lbs, 3x10</li>
         </ul>
         <div class="nav-container">
             <button class="nav-btn" onclick="showWorkout('Friday')">◄ Back</button>
@@ -342,7 +347,7 @@
     </div>
     <div class="workout-popup" id="Sunday">
         <span class="close-btn" onclick="closePopup('Sunday')">X</span>
-        <h2>Sunday: Core & Recovery (Week 1)</h2>
+        <h2>Sunday: Core & Recovery</h2>
         <h3>Warmup (5-10 min)</h3>
         <ul>
             <li>Plank Hold: 3x30 sec</li>
@@ -364,7 +369,7 @@
     <!-- Alternate Workouts -->
     <div class="workout-popup" id="Alt1">
         <span class="close-btn" onclick="closePopup('Alt1')">X</span>
-        <h2>Chest & Triceps (Week 2)</h2>
+        <h2>Chest & Triceps (Alt)</h2>
         <h3>Warmup (5-10 min)</h3>
         <ul>
             <li>Arm Circles: 2x20</li>
@@ -382,7 +387,7 @@
     </div>
     <div class="workout-popup" id="Alt2">
         <span class="close-btn" onclick="closePopup('Alt2')">X</span>
-        <h2>Back & Biceps (Week 2)</h2>
+        <h2>Back & Biceps (Alt)</h2>
         <h3>Warmup (5-10 min)</h3>
         <ul>
             <li>Dead Hangs: 3x20 sec</li>
@@ -399,7 +404,7 @@
     </div>
     <div class="workout-popup" id="Alt3">
         <span class="close-btn" onclick="closePopup('Alt3')">X</span>
-        <h2>Legs (Week 2)</h2>
+        <h2>Legs (Alt)</h2>
         <h3>Warmup (5-10 min)</h3>
         <ul>
             <li>Leg Swings: 2x15</li>
@@ -416,7 +421,7 @@
     </div>
     <div class="workout-popup" id="Alt4">
         <span class="close-btn" onclick="closePopup('Alt4')">X</span>
-        <h2>Shoulders (Week 2)</h2>
+        <h2>Shoulders (Alt)</h2>
         <h3>Warmup (5-10 min)</h3>
         <ul>
             <li>Arm Swings: 2x20</li>
@@ -433,7 +438,7 @@
     </div>
     <div class="workout-popup" id="Alt5">
         <span class="close-btn" onclick="closePopup('Alt5')">X</span>
-        <h2>Legs (Week 3)</h2>
+        <h2>Legs (Alt)</h2>
         <h3>Warmup (5-10 min)</h3>
         <ul>
             <li>Butt Kicks: 3x30 sec</li>
@@ -450,7 +455,7 @@
     </div>
     <div class="workout-popup" id="Alt6">
         <span class="close-btn" onclick="closePopup('Alt6')">X</span>
-        <h2>Full Body (Week 3)</h2>
+        <h2>Full Body (Alt)</h2>
         <h3>Warmup (5-10 min)</h3>
         <ul>
             <li>Dynamic Stretch: 2 min</li>
@@ -467,7 +472,7 @@
     </div>
     <div class="workout-popup" id="Alt7">
         <span class="close-btn" onclick="closePopup('Alt7')">X</span>
-        <h2>Core (Week 3)</h2>
+        <h2>Core (Alt)</h2>
         <h3>Warmup (5-10 min)</h3>
         <ul>
             <li>Plank Hold: 3x30 sec</li>
@@ -484,7 +489,7 @@
     </div>
     <div class="workout-popup" id="Alt8">
         <span class="close-btn" onclick="closePopup('Alt8')">X</span>
-        <h2>Chest & Triceps (Week 4)</h2>
+        <h2>Chest & Triceps (Alt)</h2>
         <h3>Warmup (5-10 min)</h3>
         <ul>
             <li>Jumping Jacks: 3x30 sec</li>
@@ -501,7 +506,7 @@
     </div>
     <div class="workout-popup" id="Alt9">
         <span class="close-btn" onclick="closePopup('Alt9')">X</span>
-        <h2>Back & Biceps (Week 4)</h2>
+        <h2>Back & Biceps (Alt)</h2>
         <h3>Warmup (5-10 min)</h3>
         <ul>
             <li>Arm Swings: 2x20</li>
@@ -518,7 +523,7 @@
     </div>
     <div class="workout-popup" id="Alt10">
         <span class="close-btn" onclick="closePopup('Alt10')">X</span>
-        <h2>Full Body (Week 4)</h2>
+        <h2>Full Body (Alt)</h2>
         <h3>Warmup (5-10 min)</h3>
         <ul>
             <li>High Knees: 3x30 sec</li>
@@ -537,7 +542,7 @@
     <!-- All Workouts Popup -->
     <div class="workout-popup" id="all-workouts">
         <span class="close-btn" onclick="closePopup('all-workouts')">X</span>
-        <h2>Your Lil’ Workout List</h2>
+        <h2>Your Power Moves</h2>
         <div id="all-workout-content"></div>
         <div class="nav-container">
             <button class="nav-btn" onclick="showAllWorkouts(currentAllIndex - 1)">◄ Prev</button>
@@ -548,7 +553,7 @@
     <!-- Motivation Popup -->
     <div class="workout-popup" id="motivate">
         <span class="close-btn" onclick="closePopup('motivate')">X</span>
-        <h2>¡Your Daily Sparkle!</h2>
+        <h2>¡Your Power Boost!</h2>
         <p id="quote"></p>
     </div>
 
@@ -574,13 +579,13 @@
         }
 
         const workoutProgression = {
-            'Monday': ['Monday', 'Alt1', 'Alt8', 'Alt8'],
-            'Tuesday': ['Tuesday', 'Alt2', 'Alt9', 'Alt9'],
-            'Wednesday': ['Wednesday', 'Alt3', 'Alt5', 'Alt5'],
-            'Thursday': ['Thursday', 'Alt4', 'Alt4', 'Alt4'],
-            'Friday': ['Friday', 'Alt5', 'Alt5', 'Alt5'],
-            'Saturday': ['Saturday', 'Alt6', 'Alt10', 'Alt10'],
-            'Sunday': ['Sunday', 'Alt7', 'Alt7', 'Alt7']
+            'Monday': ['Monday', 'Monday', 'Alt1', 'Alt8'], // Monday appears twice
+            'Tuesday': ['Tuesday', 'Tuesday', 'Alt2', 'Alt9'],
+            'Wednesday': ['Wednesday', 'Wednesday', 'Alt3', 'Alt5'],
+            'Thursday': ['Thursday', 'Thursday', 'Alt4', 'Alt4'],
+            'Friday': ['Friday', 'Friday', 'Alt5', 'Alt5'],
+            'Saturday': ['Saturday', 'Saturday', 'Alt6', 'Alt10'],
+            'Sunday': ['Sunday', 'Sunday', 'Alt7', 'Alt7']
         };
 
         let skipCount = {};
@@ -594,12 +599,12 @@
         }
 
         const allWorkouts = [
-            { warmup: '<li>Jumping Jacks: 3x30 sec</li>', workout: '<li>Closed Grip DB Press: 22.5 lbs, 3x12</li><li>DB Floor Press: 22.5 lbs, 3x11</li><li>Overhead DB Tricep Ext: 22.5 lbs, 3x10</li><li>DB Skull Crushers: 12.5 lbs, 3x10</li><li>DB Chest Flys: 12.5 lbs, 3x12</li>' },
-            { warmup: '<li>Arm Swings: 2x20</li>', workout: '<li>DB Bent Over Rows: 22.5 lbs, 3x12</li><li>DB Single Arm Row: 22.5 lbs, 3x12</li><li>DB Hammer Curls: 12.5 lbs, 3x10</li><li>DB Alternating Curls: 12.5 lbs, 3x8</li>' },
-            { warmup: '<li>High Knees: 3x30 sec</li>', workout: '<li>DB Elevated Squats: 20 lbs, 3x10</li><li>DB RDLs: 15 lbs each, 3x10</li><li>DB Sumo Squats: 25 lbs, 3x12</li><li>DB Good Mornings: 30 lbs, 3x10</li>' },
-            { warmup: '<li>Shoulder Rolls: 2x15</li>', workout: '<li>DB Front Raises: 8 lbs, 3x12</li><li>DB Arnold Press: 12 lbs, 3x10</li><li>DB Lateral Raises: 8 lbs, 3x10</li><li>DB Upright Rows: 12 lbs, 3x12</li>' },
-            { warmup: '<li>Walking Lunges: 2x10</li>', workout: '<li>DB Glute Bridge: 25 lbs, 3x12</li><li>DB RDLs: 25 lbs, 3x12</li><li>DB Step-Ups: 15 lbs each, 3x10</li><li>DB Goblet Squats: 20 lbs, 3x12</li>' },
-            { warmup: '<li>Jump Rope (or mimic): 3x1 min</li>', workout: '<li>DB Chest Press: 22.5 lbs, 3x12</li><li>DB Bent Over Rows: 22.5 lbs, 3x12</li><li>DB Squats: 20 lbs, 3x10</li><li>DB Shoulder Press: 12 lbs, 3x10</li>' },
+            { warmup: '<li>Jumping Jacks: 3x30 sec</li>', workout: '<li>Closed Grip DB Press: 22.5 lbs, 3x12</li><li>DB Floor Press: 22.5 lbs, 3x11</li><li>Overhead DB Tricep Ext: 22.5 lbs, 3x10</li><li>DB Skull Crushers: 12.5 lbs, 3x10</li><li>DB Chest Flys: 12.5 lbs, 3x12</li><li>DB Chest Press: 22.5 lbs, 3x10</li><li>DB Tricep Kickbacks: 12.5 lbs, 3x10</li>' },
+            { warmup: '<li>Arm Swings: 2x20</li>', workout: '<li>DB Bent Over Rows: 22.5 lbs, 3x10</li><li>DB Single Arm Row: 22.5 lbs, 3x12</li><li>DB Hammer Curls: 12.5 lbs, 3x10</li><li>DB Underhand Rows: 12.5 lbs, 3x10</li><li>DB Alternating Curls: 12.5 lbs, 3x6</li><li>DB Reverse Flys: 10 lbs, 3x12</li>' },
+            { warmup: '<li>High Knees: 3x30 sec</li>', workout: '<li>DB Elevated Squats: 20 lbs, 3x10</li><li>DB RDLs: 15 lbs each, 3x10</li><li>DB Bulgarian RDLs: 25 lbs each, 3x10</li><li>DB Sumo Squats: 25 lbs, 3x12</li>' },
+            { warmup: '<li>Shoulder Rolls: 2x15</li>', workout: '<li>DB Front Raises: 8 lbs, 3x12</li><li>DB Arnold Press: 12 lbs, 3x10</li><li>DB Lateral Raises: 8 lbs, 3x8</li><li>DB Shoulder Press: 15 lbs, 3x10</li><li>DB Upright Rows: 12 lbs, 3x12</li>' },
+            { warmup: '<li>Walking Lunges: 2x10</li>', workout: '<li>DB Glute Bridge: 25 lbs, 3x10</li><li>DB RDLs: 25 lbs, 3x12</li><li>DB Good Mornings: 30 lbs, 3x10</li><li>DB Step-Ups: 15 lbs each, 3x10</li>' },
+            { warmup: '<li>Jump Rope (or mimic): 3x1 min</li>', workout: '<li>DB Chest Press: 22.5 lbs, 3x10</li><li>DB Bent Over Rows: 22.5 lbs, 3x10</li><li>DB Squats: 20 lbs, 3x10</li><li>DB Shoulder Press: 15 lbs, 3x10</li>' },
             { warmup: '<li>Plank Hold: 3x30 sec</li>', workout: '<li>DB Chest Flys: 12.5 lbs, 3x12</li><li>DB Single Arm Row: 22.5 lbs, 3x12</li><li>DB Russian Twists: 10 lbs, 3x15</li><li>DB Deadlifts: 25 lbs, 3x10</li>' },
             { warmup: '<li>Arm Circles: 2x20</li>', workout: '<li>DB Bench Press: 25 lbs, 4x10</li><li>DB Tricep Kickbacks: 12.5 lbs, 4x12</li><li>DB Flys: 15 lbs, 4x10</li><li>DB Overhead Press: 20 lbs, 4x8</li>' },
             { warmup: '<li>Dead Hangs: 3x20 sec</li>', workout: '<li>DB Reverse Flys: 10 lbs, 4x12</li><li>DB Concentration Curls: 15 lbs, 4x10</li><li>DB Underhand Rows: 25 lbs, 4x10</li>' },
@@ -629,16 +634,16 @@
         }
 
         const quotes = [
-            "¡Karen, you’re a lil’ Ecuadorian star lifting her way to sparkle!",
-            "Every dumbbell rep is a cute step to your dreams, darling!",
-            "From Hartford to Quito, you’re twirling weights like a princess!",
-            "Doing a lil’ something is better than nothing—shine on, cutie!",
-            "Ecuadorian queens like you lift daily—keep it adorbs!",
-            "Sweat in your cozy nook, glow like a fairy—Karen, you’re magic!",
-            "Lift those lil’ weights and build a big, cute life!",
-            "Hartford’s sweetest dumbbell diva—Karen, you’re unstoppable!",
-            "Twirl, lift, repeat—every set’s a hug from you to you!",
-            "Karen, you’re a pink-powered princess of strength!"
+            "¡Karen, lift like the boss you are—strong women build empires!",
+            "Every rep is a brick in your business legacy—keep stacking, queen!",
+            "From Ecuador to Hartford, you’re a force—power through those weights!",
+            "Sweat is your profit—invest in yourself daily, Karen!",
+            "Strong spirits lift heavy—own the gym like you own your biz!",
+            "Women entrepreneurs don’t quit—crush those dumbbells, Karen!",
+            "Your strength is your superpower—unleash it with every set!",
+            "Lift big, dream bigger—Karen, you’re unstoppable!",
+            "A strong body fuels a strong mind—build both, business warrior!",
+            "¡Karen, you’re a titan—lift like you mean it and rule the day!"
         ];
 
         function showMotivation() {
